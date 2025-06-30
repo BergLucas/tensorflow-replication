@@ -1,0 +1,81 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.16, pytest-8.4.1, pluggy-1.6.0 -- /home/lucas/Documents/GitHub/tensorflow-replication/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /home/lucas/Documents/GitHub/tensorflow-replication
+collecting ... 2025-07-01 00:32:51.727428: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:32] Could not find cuda drivers on your machine, GPU will not be used.
+2025-07-01 00:32:51.732547: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:32] Could not find cuda drivers on your machine, GPU will not be used.
+2025-07-01 00:32:51.745543: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1751322771.766796  178342 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1751322771.772834  178342 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1751322771.790697  178342 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1751322771.790750  178342 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1751322771.790758  178342 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1751322771.790764  178342 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+2025-07-01 00:32:51.796026: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+collected 1 item
+
+tensorflow.python.eager.context/ensure_initialized.py::test_case 2025-07-01 00:32:54.043872: E external/local_xla/xla/stream_executor/cuda/cuda_platform.cc:51] failed call to cuInit: INTERNAL: CUDA error: Failed call to cuInit: CUDA_ERROR_NO_DEVICE: no CUDA-capable device is detected
+2025-07-01 00:32:54.043921: I external/local_xla/xla/stream_executor/cuda/cuda_diagnostics.cc:178] verbose logging is disabled. Rerun with verbose logging (usually --v=1 or --vmodule=cuda_diagnostics=1) to get more diagnostic output from this module
+2025-07-01 00:32:54.043935: I external/local_xla/xla/stream_executor/cuda/cuda_diagnostics.cc:183] retrieving CUDA diagnostic information for host: lucas-hp
+2025-07-01 00:32:54.043945: I external/local_xla/xla/stream_executor/cuda/cuda_diagnostics.cc:190] hostname: lucas-hp
+2025-07-01 00:32:54.044029: I external/local_xla/xla/stream_executor/cuda/cuda_diagnostics.cc:197] libcuda reported version is: 575.57.8
+2025-07-01 00:32:54.044064: I external/local_xla/xla/stream_executor/cuda/cuda_diagnostics.cc:201] kernel reported version is: 575.57.8
+2025-07-01 00:32:54.044073: I external/local_xla/xla/stream_executor/cuda/cuda_diagnostics.cc:291] kernel version seems to match DSO: 575.57.8
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1751322774.054452  178342 grpc_server_lib.cc:614] INVALID_ARGUMENT: Could not interpret "bW5a ]" as a host-port pair.
+E0701 00:32:54.054809312  178342 completion_queue.cc:244]    assertion failed: queue.num_items() == 0
+Fatal Python error: Aborted
+
+Current thread 0x00007f92514a4600 (most recent call first):
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/tensorflow/python/eager/context.py", line 736 in ensure_initialized
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/tensorflow/python/framework/constant_op.py", line 107 in convert_to_eager_tensor
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/tensorflow/python/framework/constant_op.py", line 301 in _constant_eager_impl
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/tensorflow/python/framework/constant_op.py", line 289 in _constant_impl
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/tensorflow/python/framework/constant_op.py", line 276 in constant
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/tensorflow/python/ops/weak_tensor_ops.py", line 142 in wrapper
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/tensorflow/python/framework/constant_tensor_conversion.py", line 29 in _constant_tensor_conversion_function
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/tensorflow/python/framework/tensor_conversion_registry.py", line 234 in convert
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/tensorflow/python/framework/ops.py", line 736 in convert_to_tensor
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/tensorflow/python/profiler/trace.py", line 183 in wrapped
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/tensorflow/python/ops/math_ops.py", line 1012 in cast
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/tensorflow/python/util/dispatch.py", line 1260 in op_dispatch_handler
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/tensorflow/python/util/traceback_utils.py", line 150 in error_handler
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/tensorflow/python/ops/math_ops.py", line 1285 in to_int64
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/tensorflow/python/util/deprecation.py", line 383 in new_func
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/tensorflow/python/util/dispatch.py", line 1260 in op_dispatch_handler
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/tensorflow/python/util/traceback_utils.py", line 150 in error_handler
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/tensorflow.python.eager.context/ensure_initialized.py", line 8 in test_case
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/_pytest/python.py", line 157 in pytest_pyfunc_call
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/pluggy/_callers.py", line 121 in _multicall
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/pluggy/_manager.py", line 120 in _hookexec
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/pluggy/_hooks.py", line 512 in __call__
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/_pytest/python.py", line 1671 in runtest
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/_pytest/runner.py", line 178 in pytest_runtest_call
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/pluggy/_callers.py", line 121 in _multicall
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/pluggy/_manager.py", line 120 in _hookexec
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/pluggy/_hooks.py", line 512 in __call__
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/_pytest/runner.py", line 246 in <lambda>
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/_pytest/runner.py", line 344 in from_call
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/_pytest/runner.py", line 245 in call_and_report
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/_pytest/runner.py", line 136 in runtestprotocol
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/_pytest/runner.py", line 117 in pytest_runtest_protocol
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/pluggy/_callers.py", line 121 in _multicall
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/pluggy/_manager.py", line 120 in _hookexec
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/pluggy/_hooks.py", line 512 in __call__
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/_pytest/main.py", line 367 in pytest_runtestloop
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/pluggy/_callers.py", line 121 in _multicall
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/pluggy/_manager.py", line 120 in _hookexec
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/pluggy/_hooks.py", line 512 in __call__
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/_pytest/main.py", line 343 in _main
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/_pytest/main.py", line 289 in wrap_session
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/_pytest/main.py", line 336 in pytest_cmdline_main
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/pluggy/_callers.py", line 121 in _multicall
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/pluggy/_manager.py", line 120 in _hookexec
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/pluggy/_hooks.py", line 512 in __call__
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/_pytest/config/__init__.py", line 175 in main
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/_pytest/config/__init__.py", line 201 in console_main
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/bin/pytest", line 8 in <module>
+
+Extension modules: numpy._core._multiarray_umath, numpy.linalg._umath_linalg, google._upb._message, charset_normalizer.md, requests.packages.charset_normalizer.md, requests.packages.chardet.md, h5py._errors, h5py.defs, h5py._objects, h5py.h5, h5py.utils, h5py.h5t, h5py.h5s, h5py.h5ac, h5py.h5p, h5py.h5r, h5py._npystrings, h5py._proxy, h5py._conv, h5py.h5z, h5py.h5a, h5py.h5d, h5py.h5ds, h5py.h5g, h5py.h5i, h5py.h5o, h5py.h5f, h5py.h5fd, h5py.h5pl, h5py.h5l, h5py._selector (total: 31)
