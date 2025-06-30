@@ -1,0 +1,61 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.16, pytest-8.4.1, pluggy-1.6.0 -- /home/lucas/Documents/GitHub/tensorflow-replication/venv/bin/python
+cachedir: .pytest_cache
+rootdir: /home/lucas/Documents/GitHub/tensorflow-replication
+collecting ... 2025-07-01 00:47:49.098528: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+2025-07-01 00:47:49.573089: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2025-07-01 00:47:51.817313: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+collected 1 item
+
+tensorflow.python.eager.execute/quick_execute.py::test_case 2025-07-01 00:47:52.193084: E external/local_xla/xla/stream_executor/cuda/cuda_platform.cc:51] failed call to cuInit: INTERNAL: CUDA error: Failed call to cuInit: CUDA_ERROR_NO_DEVICE: no CUDA-capable device is detected
+2025-07-01 00:47:52.193127: I external/local_xla/xla/stream_executor/cuda/cuda_diagnostics.cc:171] verbose logging is disabled. Rerun with verbose logging (usually --v=1 or --vmodule=cuda_diagnostics=1) to get more diagnostic output from this module
+2025-07-01 00:47:52.193138: I external/local_xla/xla/stream_executor/cuda/cuda_diagnostics.cc:176] retrieving CUDA diagnostic information for host: lucas-hp
+2025-07-01 00:47:52.193146: I external/local_xla/xla/stream_executor/cuda/cuda_diagnostics.cc:183] hostname: lucas-hp
+2025-07-01 00:47:52.193347: I external/local_xla/xla/stream_executor/cuda/cuda_diagnostics.cc:190] libcuda reported version is: 575.57.8
+2025-07-01 00:47:52.193386: I external/local_xla/xla/stream_executor/cuda/cuda_diagnostics.cc:194] kernel reported version is: 575.57.8
+2025-07-01 00:47:52.193397: I external/local_xla/xla/stream_executor/cuda/cuda_diagnostics.cc:284] kernel version seems to match DSO: 575.57.8
+2025-07-01 00:47:52.218318: I external/local_xla/xla/service/service.cc:153] XLA service 0x562b1d82c3b0 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2025-07-01 00:47:52.218356: I external/local_xla/xla/service/service.cc:161]   StreamExecutor device (0): Host, Default Version
+2025-07-01 00:47:52.234206: I tensorflow/compiler/mlir/tensorflow/utils/dump_mlir_util.cc:269] disabling MLIR crash reproducer, set env var `MLIR_CRASH_REPRODUCER_DIRECTORY` to enable.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1751323672.321059  189714 device_compiler.h:196] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+Fatal Python error: Segmentation fault
+
+Current thread 0x00007f03d88a7600 (most recent call first):
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/tensorflow/python/eager/execute.py", line 53 in quick_execute
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/tensorflow/compiler/tf2xla/ops/gen_xla_ops.py", line 3023 in xla_replica_id_eager_fallback
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/tensorflow/compiler/tf2xla/ops/gen_xla_ops.py", line 2980 in xla_replica_id
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/tensorflow.python.eager.execute/quick_execute.py", line 5 in test_case
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/_pytest/python.py", line 157 in pytest_pyfunc_call
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/pluggy/_callers.py", line 121 in _multicall
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/pluggy/_manager.py", line 120 in _hookexec
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/pluggy/_hooks.py", line 512 in __call__
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/_pytest/python.py", line 1671 in runtest
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/_pytest/runner.py", line 178 in pytest_runtest_call
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/pluggy/_callers.py", line 121 in _multicall
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/pluggy/_manager.py", line 120 in _hookexec
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/pluggy/_hooks.py", line 512 in __call__
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/_pytest/runner.py", line 246 in <lambda>
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/_pytest/runner.py", line 344 in from_call
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/_pytest/runner.py", line 245 in call_and_report
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/_pytest/runner.py", line 136 in runtestprotocol
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/_pytest/runner.py", line 117 in pytest_runtest_protocol
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/pluggy/_callers.py", line 121 in _multicall
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/pluggy/_manager.py", line 120 in _hookexec
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/pluggy/_hooks.py", line 512 in __call__
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/_pytest/main.py", line 367 in pytest_runtestloop
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/pluggy/_callers.py", line 121 in _multicall
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/pluggy/_manager.py", line 120 in _hookexec
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/pluggy/_hooks.py", line 512 in __call__
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/_pytest/main.py", line 343 in _main
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/_pytest/main.py", line 289 in wrap_session
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/_pytest/main.py", line 336 in pytest_cmdline_main
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/pluggy/_callers.py", line 121 in _multicall
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/pluggy/_manager.py", line 120 in _hookexec
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/pluggy/_hooks.py", line 512 in __call__
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/_pytest/config/__init__.py", line 175 in main
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/lib/python3.10/site-packages/_pytest/config/__init__.py", line 201 in console_main
+  File "/home/lucas/Documents/GitHub/tensorflow-replication/venv/bin/pytest", line 8 in <module>
+
+Extension modules: numpy._core._multiarray_umath, numpy.linalg._umath_linalg, google._upb._message, charset_normalizer.md, requests.packages.charset_normalizer.md, requests.packages.chardet.md, h5py._errors, h5py.defs, h5py._objects, h5py.h5, h5py.utils, h5py.h5t, h5py.h5s, h5py.h5ac, h5py.h5p, h5py.h5r, h5py._npystrings, h5py._proxy, h5py._conv, h5py.h5z, h5py.h5a, h5py.h5d, h5py.h5ds, h5py.h5g, h5py.h5i, h5py.h5o, h5py.h5f, h5py.h5fd, h5py.h5pl, h5py.h5l, h5py._selector (total: 31)
