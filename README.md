@@ -1,6 +1,6 @@
 # Tensorflow replication
 
-The purpose of this repo is to report the bugs found by [Pynguin](https://www.pynguin.eu/) in [tensorflow](https://pypi.org/project/tensorflow/).
+The purpose of this repo is to report the bugs found by [Pynguin](https://www.pynguin.eu/) in [tensorflow](https://pypi.org/project/tensorflow/) ([issue #96209](https://github.com/tensorflow/tensorflow/issues/96209)).
 
 It is organised by module at the origin of the crashes where:
 
